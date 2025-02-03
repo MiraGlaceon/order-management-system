@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/oms_db
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: mira
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+server:
+  port: 8080
+
+logging:
+  config: ./config/logback.xml
