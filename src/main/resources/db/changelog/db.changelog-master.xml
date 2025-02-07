@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <property name="changeset_author" value="mira"/>
+    <property name="db_version" value="0.0.1"/>
+    <property name="db_build_date" value="02.02.2025"/>
+
+    <includeAll path="db/changelog/v001"/>
+
+</databaseChangeLog>

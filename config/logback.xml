@@ -55,7 +55,7 @@
         <appender-ref ref="SQL"/>
     </logger>
 
-    <logger name="org.liquibase" level="INFO">
+    <logger name="liquibase" level="INFO">
         <appender-ref ref="SQL"/>
     </logger>
 

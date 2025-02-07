@@ -1,0 +1,140 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="config:set-language" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/config/set-language.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="config:create-schema" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/config/create-schema.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <!--  TABLES  -->
+    <changeSet id="table:crm.oms_user" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/tables/crm/oms_user.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="table:crm.address" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/tables/crm/address.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="table:dict.order_status" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/tables/dict/order_status.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="table:product.product" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/tables/product/product.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="table:product.order" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/tables/product/order.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="table:product.delivery_info" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/tables/product/delivery_info.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <!--  SEQUENCES  -->
+    <changeSet id="sequence:crm.oms_user" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/sequences/crm/oms_user.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="sequence:crm.address" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/sequences/crm/address.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="sequence:dict.order_status" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/sequences/dict/order_status.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="sequence:product.product" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/sequences/product/product.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="sequence:product.order" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/sequences/product/order.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="sequence:product.delivery_info" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/sequences/product/delivery_info.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <!--  CONSTRAINTS  -->
+    <changeSet id="constraint:crm.oms_user" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/constraints/crm/oms_user.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="constraint:crm.address" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/constraints/crm/address.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="constraint:dict.order_status" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/constraints/dict/order_status.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="constraint:product.product" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/constraints/product/product.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="constraint:product.order" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/constraints/product/order.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="constraint:product.delivery_info" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/constraints/product/delivery_info.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <!--  INDEXES  -->
+    <changeSet id="index:crm.oms_user" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/indexes/crm/oms_user.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="index:crm.address" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/indexes/crm/address.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="index:dict.order_status" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/indexes/dict/order_status.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="index:product.order" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/indexes/product/order.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <changeSet id="index:product.delivery_info" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/structure/indexes/product/delivery_info.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+
+    <!--  INIT DATA  -->
+    <changeSet id="init:dict.order_status" author="${changeset_author}">
+        <sqlFile path="db/changelog/v001/initdata/dict/order_status_init.sql"/>
+        <comment>version: ${db_version} [${db_build_date}]</comment>
+    </changeSet>
+</databaseChangeLog>
