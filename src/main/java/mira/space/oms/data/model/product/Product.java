@@ -9,7 +9,7 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import mira.space.oms.data.model.Audit;
+import mira.space.oms.data.model.audit.Audit;
 
 import java.math.BigDecimal;
 
