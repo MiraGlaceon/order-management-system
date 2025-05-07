@@ -10,6 +10,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: mira
+          POSTGRES_DB: oms_db
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
@@ -19,11 +34,6 @@ jobs:
         with:
           java-version: 23
           distribution: 'temurin'
-
-      - name: create postgres user and create database
-        run: |
-          sudo -u postgres psql -c "CREATE USER postgres WITH PASSWORD 'mira';"
-          sudo -u postgres psql -c "CREATE DATABASE oms_db OWNER postgres"
 
       - name: gradle wrapper build
         run: gradle wrapper --gradle-version 8.10
@@ -38,17 +48,14 @@ jobs:
           restore-keys: |
             gradle-${{ runner.os }}-
 
+      - name: set ./gradlew executable
+        run: chmod +x ./gradlew
+
       - name: run checkstyle
-        run: | 
-          chmod +x ./gradlew
-          ./gradlew checkstyleMain checkstyleTest
+        run: ./gradlew checkstyleMain checkstyleTest
 
       - name: run tests
-        run: |
-          chmod +x ./gradlew
-          ./gradlew test
+        run: ./gradlew test
 
       - name: build project
-        run: |
-          chmod +x ./gradlew
-          ./gradlew build
+        run: ./gradlew build
