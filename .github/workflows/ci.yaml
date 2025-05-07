@@ -31,10 +31,10 @@ jobs:
             gradle-${{ runner.os }}-
 
       - name: run checkstyle
-        run: ./gradlew checkstyleMain checkstyleTest
+        run: chmod +x gradlew checkstyleMain checkstyleTest
 
       - name: run tests
-        run: ./gradlew test
+        run: chmod +x gradlew test
 
       - name: build project
-        run: ./gradlew build
+        run: chmod +x gradlew build
