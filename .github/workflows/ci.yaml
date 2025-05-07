@@ -20,6 +20,13 @@ jobs:
           java-version: 23
           distribution: 'temurin'
 
+      - name: starting postgresql server
+        run: sudo systemctl start postgresql.service
+#
+#      - name: set up postgres user and create database
+#        run: |
+
+
       - name: gradle wrapper build
         run: gradle wrapper --gradle-version 8.10
 
