@@ -20,12 +20,10 @@ jobs:
           java-version: 23
           distribution: 'temurin'
 
-      - name: starting postgresql server
-        run: sudo systemctl start postgresql.service
-#
-#      - name: set up postgres user and create database
-#        run: |
-
+      - name: create postgres user and create database
+        run: |
+          sudo -u postgres psql -c "CREATE USER postgres WITH PASSWORD 'mira';"
+          sudo -u postgres psql -c "CREATE DATABASE oms_db OWNER postgres"
 
       - name: gradle wrapper build
         run: gradle wrapper --gradle-version 8.10
