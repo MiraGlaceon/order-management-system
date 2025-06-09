@@ -5,6 +5,12 @@ spring:
     username: postgres
     password: mira
 
+  kafka:
+    bootstrap-servers: host.docker.internal:29092,host.docker.internal:29093
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.xml
 
@@ -16,3 +22,7 @@ logging:
   charset:
     console: UTF-8
     file: UTF-8
+
+kafka:
+  topics:
+    test-topic: topic-mira
