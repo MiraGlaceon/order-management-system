@@ -1,4 +1,4 @@
-package mira.space.oms.services.audit;
+package mira.space.oms.services.crm;
 
 import mira.space.oms.data.model.crm.User;
 

@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.4.2'
 	id 'io.spring.dependency-management' version '1.1.7'
 	id 'checkstyle'
+	id 'me.champeau.jmh' version '0.7.2'
 }
 
 group = 'mira.space'
@@ -46,8 +47,12 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	jmh "org.openjdk.jmh:jmh-core:1.36"
+	jmhAnnotationProcessor "org.openjdk.jmh:jmh-generator-annprocess:1.36"
 }
 
 tasks.named('test') {
@@ -60,3 +65,21 @@ tasks.withType(Checkstyle).configureEach {
 		html.required = true
 	}
 }
+
+sourceSets {
+	jmh {
+		java {
+			srcDirs = ['src/jmh/java']
+		}
+	}
+}
+
+// if I need to set jmh mode from gradle
+//jmh {
+//	fork = 1
+//	iterations = 2
+//	warmupIterations = 1
+//	timeOnIteration = '10s'
+//	benchmarkMode = ['avgt']
+//  timeUnit = 'us'
+//}

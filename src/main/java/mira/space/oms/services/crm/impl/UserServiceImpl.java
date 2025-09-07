@@ -1,10 +1,10 @@
-package mira.space.oms.services.audit.impl;
+package mira.space.oms.services.crm.impl;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import mira.space.oms.data.model.crm.User;
 import mira.space.oms.data.repository.crm.UserRepository;
-import mira.space.oms.services.audit.UserService;
+import mira.space.oms.services.crm.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

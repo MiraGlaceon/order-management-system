@@ -3,7 +3,7 @@ package mira.space.oms.resolvers;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import lombok.AllArgsConstructor;
 import mira.space.oms.data.model.crm.User;
-import mira.space.oms.services.audit.UserService;
+import mira.space.oms.services.crm.UserService;
 import org.springframework.stereotype.Component;
 
 @Component
